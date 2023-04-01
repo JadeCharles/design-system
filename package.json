@@ -11,11 +11,22 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "peerDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JadeCharles/design-system.git"
+  },
+  "publishConfig": {
+    "@paylani:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "echo 'Ejecting...' && react-scripts eject",
+    "clean": "rm -rf dist",
+    "prepare-build": "echo 'Preparing (clean, Env, babel)...' && npm run clean && NODE_ENV=production babel src --out-dir dist",
+    "copy": "cp package.json dist/. && cp README.md dist/. && cd src && find . \\( ! -name '*.original.css' -a \\( -name '*.css' -o -name '*.png' -o -name '*.svg' \\) \\) | cpio -pdm ../dist && cd ..",
+    "build": "echo 'Building...' && npm run prepare-build && npm run copy"
   },
   "eslintConfig": {
     "extends": [
