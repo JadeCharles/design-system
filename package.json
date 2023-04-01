@@ -1,7 +1,8 @@
 {
-  "name": "design-system",
-  "version": "0.1.0",
+  "name": "@jadecharles/design-system",
+  "version": "0.1.1",
   "description": "A design system for cool transitions and visual effects. Will be renamed soon",
+  "main": "index.js",
   "dependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
@@ -55,6 +56,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/JadeCharles/design-system/issues"
   },
   "homepage": "https://github.com/JadeCharles/design-system",
   "author": "Jade Charles",
